@@ -128,9 +128,13 @@ const totalChapters = allChapters.filter((c) => c.chapter).length;
           Author
         </p>
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-tertiary)] flex items-center justify-center shrink-0">
-            <span class="text-sm font-semibold text-[var(--text-secondary)]">SK</span>
-          </div>
+          <img
+            src={`${base}/images/author.webp`}
+            alt="Siddhant Khare"
+            width="40"
+            height="40"
+            class="w-10 h-10 rounded-full object-cover shrink-0"
+          />
           <div>
             <p class="text-[15px] font-medium text-[var(--text-primary)] mb-1">Siddhant Khare</p>
             <p class="text-[13px] text-[var(--text-tertiary)] leading-relaxed mb-3">

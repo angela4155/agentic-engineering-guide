@@ -11,23 +11,23 @@ const { prev, next } = getAdjacentChapters(chapters, currentSlug);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<nav class="mt-14 pt-6 border-t border-[var(--border-subtle)] flex justify-between gap-4">
+<nav class="mt-16 pt-8 border-t border-[var(--border)] flex justify-between gap-4">
   {prev ? (
-    <a href={`${base}/${prev.slug}/`} class="group flex flex-col gap-0.5 max-w-[45%]">
-      <span class="font-[var(--font-mono)] text-[11px] text-[var(--text-tertiary)] group-hover:text-[var(--text-secondary)] transition-colors">
-        Previous
+    <a href={`${base}/${prev.slug}/`} class="group flex flex-col items-start gap-1 max-w-[45%]">
+      <span class="text-xs text-[var(--text-tertiary)] group-hover:text-[var(--text-secondary)] transition-colors">
+        ← Previous
       </span>
-      <span class="text-[13px] font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors leading-snug">
+      <span class="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors leading-snug">
         {prev.title}
       </span>
     </a>
   ) : <div />}
   {next ? (
-    <a href={`${base}/${next.slug}/`} class="group flex flex-col items-end gap-0.5 max-w-[45%] ml-auto">
-      <span class="font-[var(--font-mono)] text-[11px] text-[var(--text-tertiary)] group-hover:text-[var(--text-secondary)] transition-colors">
-        Next
+    <a href={`${base}/${next.slug}/`} class="group flex flex-col items-end gap-1 max-w-[45%] ml-auto">
+      <span class="text-xs text-[var(--text-tertiary)] group-hover:text-[var(--text-secondary)] transition-colors">
+        Next →
       </span>
-      <span class="text-[13px] font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors leading-snug text-right">
+      <span class="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors leading-snug text-right">
         {next.title}
       </span>
     </a>

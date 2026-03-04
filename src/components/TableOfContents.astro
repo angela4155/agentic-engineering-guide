@@ -8,19 +8,19 @@ const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 ---
 
 {filtered.length > 0 && (
-  <aside class="hidden xl:block w-48 shrink-0 sticky top-12 h-[calc(100vh-3rem)] py-10 pr-4">
+  <aside class="hidden xl:block w-52 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] py-10 pr-6">
     <nav class="overflow-y-auto max-h-full">
-      <p class="font-[var(--font-mono)] text-[10px] tracking-[0.15em] uppercase text-[var(--text-tertiary)] mb-3">
+      <span class="font-[var(--font-mono)] text-[10px] tracking-widest uppercase text-[var(--text-tertiary)] mb-3 block">
         On this page
-      </p>
-      <ul class="space-y-1">
+      </span>
+      <ul class="space-y-1.5">
         {filtered.map((h) => (
           <li>
             <a
               href={`#${h.slug}`}
               class:list={[
-                "block text-[12px] leading-relaxed transition-colors duration-100 hover:text-[var(--text-primary)]",
-                h.depth === 2 ? "text-[var(--text-secondary)]" : "text-[var(--text-tertiary)] pl-2.5",
+                "block text-xs leading-relaxed transition-colors hover:text-[var(--text-primary)]",
+                h.depth === 2 ? "text-[var(--text-secondary)]" : "text-[var(--text-tertiary)] pl-3",
               ]}
               data-toc-link
               data-toc-slug={h.slug}
@@ -53,7 +53,7 @@ const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
           }
         }
       },
-      { rootMargin: '-60px 0px -75% 0px', threshold: 0 }
+      { rootMargin: '-80px 0px -70% 0px', threshold: 0 }
     );
     document.querySelectorAll('.prose h2[id], .prose h3[id]').forEach(h => observer.observe(h));
   }
