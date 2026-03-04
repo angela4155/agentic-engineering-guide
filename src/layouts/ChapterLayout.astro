@@ -21,8 +21,8 @@ interface Props {
 const { title, description, chapter, part, partTitle, headings, allChapters, currentSlug } = Astro.props;
 
 const pageTitle = chapter
-  ? `Ch. ${String(chapter).padStart(2, "0")}: ${title} — The Agentic Engineering Guide`
-  : `${title} — The Agentic Engineering Guide`;
+  ? `Ch. ${String(chapter).padStart(2, "0")}: ${title} | The Agentic Engineering Guide`
+  : `${title} | The Agentic Engineering Guide`;
 ---
 
 <BaseLayout title={pageTitle} description={description}>
@@ -47,7 +47,7 @@ const pageTitle = chapter
             </h1>
             {part && partTitle && (
               <span class="text-sm text-[var(--text-tertiary)]">
-                Part {part} — {partTitle}
+                Part {part} / {partTitle}
               </span>
             )}
           </header>

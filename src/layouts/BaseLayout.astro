@@ -14,7 +14,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#fafafa" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -55,10 +55,8 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
     <!-- Theme: apply before paint to prevent flash -->
     <script is:inline>
       (function() {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'light') {
-          document.documentElement.classList.remove('dark');
-        } else {
+        var stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
           document.documentElement.classList.add('dark');
         }
       })();
