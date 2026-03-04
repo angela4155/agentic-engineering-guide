@@ -239,3 +239,7 @@ body {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+#search-input:focus-visible {
+  outline: none;
+}
