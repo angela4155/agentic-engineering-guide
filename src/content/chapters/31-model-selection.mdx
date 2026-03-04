@@ -100,7 +100,23 @@ rejecting output that’s acceptable but not perfect.
 
 ```python
 class CascadeRouter:
+    def __init__(self, models: list[str], evaluate_fn):
+        # models ordered cheapest to most expensive
+        self.models = models
+        self.evaluate = evaluate_fn
 
+    def route(self, task: str) -> dict:
+        for model in self.models:
+            result = call_model(model, task)
+            if self.evaluate(result):
+                return {"model": model, "result": result, "escalated": False}
+        # final model's output returned regardless
+        return {"model": self.models[-1], "result": result, "escalated": True}
+
+cascade = CascadeRouter(
+    models=["gpt-5.2-mini", "claude-sonnet-4.6", "claude-opus-4.6"],
+    evaluate_fn=lambda r: r.passes_tests and r.matches_schema,
+)
 ```
 
 Research from ETH Zurich (CASTER, 2026) shows cascade routing reduces
