@@ -8,19 +8,19 @@ const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 ---
 
 {filtered.length > 0 && (
-  <aside class="hidden xl:block w-52 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] py-10 pr-6">
+  <aside class="hidden xl:block w-48 shrink-0 sticky top-12 h-[calc(100vh-3rem)] py-10 pr-4">
     <nav class="overflow-y-auto max-h-full">
-      <span class="font-[var(--font-mono)] text-[10px] tracking-widest uppercase text-[var(--text-tertiary)] mb-3 block">
+      <p class="font-[var(--font-mono)] text-[10px] tracking-[0.15em] uppercase text-[var(--text-tertiary)] mb-3">
         On this page
-      </span>
-      <ul class="space-y-1.5">
+      </p>
+      <ul class="space-y-1">
         {filtered.map((h) => (
           <li>
             <a
               href={`#${h.slug}`}
               class:list={[
-                "block text-xs leading-relaxed transition-colors hover:text-[var(--text-primary)]",
-                h.depth === 2 ? "text-[var(--text-secondary)]" : "text-[var(--text-tertiary)] pl-3",
+                "block text-[12px] leading-relaxed transition-colors duration-100 hover:text-[var(--text-primary)]",
+                h.depth === 2 ? "text-[var(--text-secondary)]" : "text-[var(--text-tertiary)] pl-2.5",
               ]}
               data-toc-link
               data-toc-slug={h.slug}
@@ -35,22 +35,26 @@ const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 )}
 
 <script>
-  // Scroll-spy: highlight active heading in ToC
   const tocLinks = document.querySelectorAll('[data-toc-link]');
   if (tocLinks.length > 0) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            tocLinks.forEach(link => link.classList.remove('!text-[var(--text-primary)]', 'font-medium'));
+            tocLinks.forEach(link => {
+              link.classList.remove('!text-[var(--text-primary)]');
+              link.classList.remove('font-medium');
+            });
             const active = document.querySelector(`[data-toc-slug="${entry.target.id}"]`);
-            active?.classList.add('!text-[var(--text-primary)]', 'font-medium');
+            if (active) {
+              active.classList.add('!text-[var(--text-primary)]');
+              active.classList.add('font-medium');
+            }
           }
         }
       },
-      { rootMargin: '-80px 0px -70% 0px', threshold: 0 }
+      { rootMargin: '-60px 0px -75% 0px', threshold: 0 }
     );
-
     document.querySelectorAll('.prose h2[id], .prose h3[id]').forEach(h => observer.observe(h));
   }
 </script>

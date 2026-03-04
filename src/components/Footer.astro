@@ -2,21 +2,20 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<footer class="border-t border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
-  <div class="max-w-5xl mx-auto px-6 py-10 lg:px-12">
-    <div class="flex flex-col sm:flex-row justify-between gap-6 text-sm text-[var(--text-tertiary)]">
-      <div class="space-y-2">
-        <p class="text-[var(--text-secondary)] font-medium">The Agentic Engineering Guide</p>
-        <p>by <a href="https://siddhantkhare.com" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors">Siddhant Khare</a></p>
-        <p>February 2026</p>
+<footer class="border-t border-[var(--border-subtle)]">
+  <div class="max-w-2xl mx-auto px-6 py-8 lg:px-10">
+    <div class="flex flex-col sm:flex-row justify-between gap-4 text-[12px] text-[var(--text-tertiary)]">
+      <div>
+        <a href={`${base}/`} class="hover:text-[var(--text-primary)] transition-colors">The Agentic Engineering Guide</a>
+        <span class="mx-1.5">·</span>
+        <a href="https://siddhantkhare.com" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">Siddhant Khare</a>
+        <span class="mx-1.5">·</span>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">CC BY-NC-SA 4.0</a>
       </div>
-      <div class="flex gap-6">
+      <div class="flex gap-4">
         <a href="https://github.com/Siddhant-K-code/agentic-engineering-guide" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">GitHub</a>
         <a href="https://twitter.com/Siddhant_K_code" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">Twitter</a>
       </div>
-    </div>
-    <div class="mt-8 pt-6 border-t border-[var(--border-subtle)] text-xs text-[var(--text-tertiary)]">
-      <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors">CC BY-NC-SA 4.0</a>. Copyright 2026 Siddhant Khare.</p>
     </div>
   </div>
 </footer>
