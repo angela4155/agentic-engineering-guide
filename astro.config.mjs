@@ -4,8 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://siddhant-k-code.github.io",
-  base: "/agentic-engineering-guide",
+  site: "https://agents.siddhantkhare.com",
+  base: "/",
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
