@@ -6,6 +6,10 @@ Concepts, workflows, and team practices for AI agent infrastructure. 10 parts, 3
 
 **Read online:** [agents.siddhantkhare.com](https://agents.siddhantkhare.com)
 
+## Who is this for?
+
+Written for engineering leaders and senior engineers adopting AI agents. Half the book covers decisions that don't require writing code: AI fatigue, the conductor model, adoption playbooks, governance, and measuring what matters. The technical chapters (context engineering, authorization, sandboxing, cost control) assume familiarity with how software systems work. Technical PMs and engineering managers will get full value. Non-technical readers will find roughly a third useful.
+
 ## Development
 
 ```bash
