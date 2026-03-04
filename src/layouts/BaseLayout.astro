@@ -32,11 +32,14 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="The Agentic Engineering Guide" />
 
+    <meta property="og:image" content={`${siteUrl}${base}/og-image.png`} />
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content="@Siddhant_K_code" />
+    <meta name="twitter:image" content={`${siteUrl}${base}/og-image.png`} />
 
     <!-- Favicon -->
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
