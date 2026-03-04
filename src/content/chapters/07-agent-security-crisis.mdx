@@ -36,23 +36,13 @@ of 2026.
 The threat model for AI agents is fundamentally different from
 traditional applications:
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [Traditional App], [Agent System],
-  [Humans make requests → Code executes],
-  [LLMs make requests → Code executes],
-  [Input is structured (forms, APIs)],
-  [Input is unstructured (natural language)],
-  [Behavior is deterministic],
-  [Behavior is probabilistic],
-  [Attack surface is the API],
-  [Attack surface is any text the agent processes],
-  [Failures are bugs],
-  [Failures can be adversarial],
-)
-]
+| Traditional App | Agent System |
+| --- | --- |
+| Humans make requests → Code executes | LLMs make requests → Code executes |
+| Input is structured (forms, APIs) | Input is unstructured (natural language) |
+| Behavior is deterministic | Behavior is probabilistic |
+| Attack surface is the API | Attack surface is any text the agent processes |
+| Failures are bugs | Failures can be adversarial |
 
 The fundamental difference is that the LLM is inside the trust boundary.
 In a traditional application, the code is trusted - it does what the
@@ -133,25 +123,12 @@ pushes, and monitor all outbound data for sensitive content.
 This isn’t theoretical. Production incidents have already demonstrated
 every attack vector.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Incident], [Impact], [Root Cause],
-  [Agent pushed secrets to public repo],
-  [Credential exposure],
-  [No file-level access control],
-  [Agent made 50K API calls in 10 minutes],
-  [\$2,300 bill],
-  [No rate limiting or budget caps],
-  [Agent modified production config],
-  [2-hour outage],
-  [No environment separation],
-  [Agent exfiltrated customer data via tool call],
-  [Data breach],
-  [No output filtering],
-)
-]
+| Incident | Impact | Root Cause |
+| --- | --- | --- |
+| Agent pushed secrets to public repo | Credential exposure | No file-level access control |
+| Agent made 50K API calls in 10 minutes | $2,300 bill | No rate limiting or budget caps |
+| Agent modified production config | 2-hour outage | No environment separation |
+| Agent exfiltrated customer data via tool call | Data breach | No output filtering |
 
 Each of these incidents was preventable with basic security controls -
 access control, rate limiting, environment separation, output filtering.

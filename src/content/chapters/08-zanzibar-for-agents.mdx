@@ -67,21 +67,12 @@ specify which directories, which operations, and under what conditions.
 ### Dynamic, context-dependent permissions
 Agent permissions often depend on context:
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [Condition], [Permission],
-  [During business hours],
-  [Can access production data],
-  [Rate limit not exceeded],
-  [Can make API calls],
-  [Human approved the session],
-  [Can execute commands],
-  [Task is code review (not deployment)],
-  [Read-only access],
-)
-]
+| Condition | Permission |
+| --- | --- |
+| During business hours | Can access production data |
+| Rate limit not exceeded | Can make API calls |
+| Human approved the session | Can execute commands |
+| Task is code review (not deployment) | Read-only access |
 
 Zanzibar’s model supports contextual tuples - permissions that are true
 only under certain conditions.
@@ -111,22 +102,11 @@ logged.
 ## Performance at scale
 OpenFGA benchmarks for agent authorization:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Scale], [Latency (p99)], [Throughput],
-  [10K checks/sec],
-  [\< 1ms],
-  [✅],
-  [100K checks/sec],
-  [\< 5ms],
-  [✅],
-  [1M checks/sec],
-  [\< 10ms],
-  [✅ (with caching)],
-)
-]
+| Scale | Latency (p99) | Throughput |
+| --- | --- | --- |
+| 10K checks/sec | &lt; 1ms | ✅ |
+| 100K checks/sec | &lt; 5ms | ✅ |
+| 1M checks/sec | &lt; 10ms | ✅ (with caching) |
 
 Authorization checks add negligible overhead to agent operations.
 There’s no performance excuse for skipping authorization. A typical
@@ -214,34 +194,15 @@ Instead of policies, you define a type system and relationship tuples:
 
 **When to use which:**
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Criteria], [OPA], [OpenFGA],
-  [**Authorization model**],
-  [Attribute-based (ABAC)],
-  [Relationship-based (ReBAC)],
-  [**Policy language**],
-  [Rego (Datalog-like)],
-  [Type system + relationship tuples],
-  [**Best for**],
-  [Complex conditional policies],
-  ["Who can access what" relationships],
-  [**Agent use case**],
-  ["Can this agent do X given conditions Y?"],
-  ["Does this agent have a relationship to this resource?"],
-  [**Ecosystem**],
-  [Larger, CNCF graduated],
-  [Growing, CNCF Incubating, used by Okta/Twitch/Canonical],
-  [**Performance**],
-  [~1ms policy evaluation],
-  [~2-5ms relationship check],
-  [**Learning curve**],
-  [Rego is non-trivial],
-  [Simpler mental model],
-)
-]
+| Criteria | OPA | OpenFGA |
+| --- | --- | --- |
+| **Authorization model** | Attribute-based (ABAC) | Relationship-based (ReBAC) |
+| **Policy language** | Rego (Datalog-like) | Type system + relationship tuples |
+| **Best for** | Complex conditional policies | "Who can access what" relationships |
+| **Agent use case** | "Can this agent do X given conditions Y?" | "Does this agent have a relationship to this resource?" |
+| **Ecosystem** | Larger, CNCF graduated | Growing, CNCF Incubating, used by Okta/Twitch/Canonical |
+| **Performance** | ~1ms policy evaluation | ~2-5ms relationship check |
+| **Learning curve** | Rego is non-trivial | Simpler mental model |
 
 **The hybrid approach:** Many enterprises use both. OPA for broad
 policy decisions ("Is this action type allowed?") and OpenFGA for

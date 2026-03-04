@@ -178,25 +178,14 @@ why it failed.
 ## Tuning backpressure
 Backpressure isn’t binary. It’s a dial.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Setting], [Symptom], [Fix],
-  [**Too little**],
-  [Hallucinations pass through. Agent output looks clean but is subtly
-  wrong. Human catches logic errors.],
-  [Add more automated checks. Strengthen test coverage.],
-  [**Too much**],
-  [Feedback loop is too slow. Agent waits 20 min for tests. Speed
-  advantage lost.],
-  [Parallelize checks. Run only affected tests. Cache build artifacts.],
-  [**Just right**],
-  [Agent self-corrects in 1-3 iterations. Human reviews architecture and
-  judgment calls only.],
-  [Target: full cycle in \< 2 minutes.],
-)
-]
+| Setting | Symptom | Fix |
+| --- | --- | --- |
+| **Too little** | Hallucinations pass through. Agent output looks clean but is subtly
+  wrong. Human catches logic errors. | Add more automated checks. Strengthen test coverage. |
+| **Too much** | Feedback loop is too slow. Agent waits 20 min for tests. Speed
+  advantage lost. | Parallelize checks. Run only affected tests. Cache build artifacts. |
+| **Just right** | Agent self-corrects in 1-3 iterations. Human reviews architecture and
+  judgment calls only. | Target: full cycle in < 2 minutes. |
 
 ## Measuring backpressure effectiveness
 How do you know if your backpressure is working? Track three metrics.
@@ -224,28 +213,13 @@ Track this metric weekly and investigate if it trends upward.
 Your investment in engineering infrastructure is now directly correlated
 with how effectively you can use AI.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Infrastructure], [Without It], [With It],
-  [Strong type system],
-  [Human catches type errors],
-  [Agent self-corrects in seconds],
-  [Fast test suite (\< 2 min)],
-  [Human verifies behavior],
-  [Agent iterates until tests pass],
-  [Strict linting],
-  [Human reviews style],
-  [Agent auto-fixes on commit],
-  [Architecture rules],
-  [Human catches boundary violations],
-  [Build fails with clear message],
-  [Pre-commit hooks],
-  [Human reviews everything],
-  [Trivial issues never reach PR],
-)
-]
+| Infrastructure | Without It | With It |
+| --- | --- | --- |
+| Strong type system | Human catches type errors | Agent self-corrects in seconds |
+| Fast test suite (&lt; 2 min) | Human verifies behavior | Agent iterates until tests pass |
+| Strict linting | Human reviews style | Agent auto-fixes on commit |
+| Architecture rules | Human catches boundary violations | Build fails with clear message |
+| Pre-commit hooks | Human reviews everything | Trivial issues never reach PR |
 
 Teams with strong types, fast tests, and strict linting adopt AI agents
 faster and with less fatigue. Teams without these things experience

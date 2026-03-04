@@ -11,23 +11,13 @@ order: 118
 Single agents work well for focused tasks. Multi-agent systems are
 needed when:
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [Scenario], [Why Multiple Agents],
-  [Different expertise needed],
-  [Security agent + code agent + test agent],
-  [Parallel execution],
-  [Multiple independent subtasks],
-  [Separation of concerns],
-  [Each agent has limited permissions],
-  [Adversarial checking],
-  [One agent reviews another’s work],
-  [Long-running workflows],
-  [Agents hand off across time boundaries],
-)
-]
+| Scenario | Why Multiple Agents |
+| --- | --- |
+| Different expertise needed | Security agent + code agent + test agent |
+| Parallel execution | Multiple independent subtasks |
+| Separation of concerns | Each agent has limited permissions |
+| Adversarial checking | One agent reviews another’s work |
+| Long-running workflows | Agents hand off across time boundaries |
 
 ## Fleet-Scale parallelism
 Before diving into architectures, it’s worth noting the scale dimension.

@@ -48,208 +48,66 @@ complete system - you configure it for your use case. Frameworks are
 more flexible but require more engineering investment. Platforms are
 less flexible but get you to production faster.
 
-#align(center)[#table(
-  columns: 5,
-  align: (col, row) => (auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Type], [Language], [License], [Best For],
-  [[LangChain](https://github.com/langchain-ai/langchain)],
-  [Framework],
-  [Python/JS],
-  [MIT],
-  [Complex chains and workflows],
-  [[LangGraph](https://github.com/langchain-ai/langgraph)],
-  [Orchestration],
-  [Python/JS],
-  [MIT],
-  [Graph-based agent workflows],
-  [[CrewAI](https://github.com/crewAIInc/crewAI)],
-  [Framework],
-  [Python],
-  [MIT],
-  [Role-based multi-agent teams],
-  [[AutoGen](https://github.com/microsoft/autogen)],
-  [Framework],
-  [Python],
-  [MIT],
-  [Multi-agent conversations],
-  [[OpenAI Agents SDK](https://github.com/openai/openai-agents-python)],
-  [SDK],
-  [Python],
-  [MIT],
-  [OpenAI-native agent building],
-  [[Goose](https://github.com/block/goose)],
-  [Agent],
-  [Rust/Python],
-  [Apache 2.0],
-  [MCP-native production agent],
-  [[Mastra](https://github.com/mastra-ai/mastra)],
-  [Framework],
-  [TypeScript],
-  [MIT],
-  [TypeScript-first agent building],
-)
-]
+| Tool | Type | Language | License | Best For |
+| --- | --- | --- | --- | --- |
+| [LangChain](https://github.com/langchain-ai/langchain) | Framework | Python/JS | MIT | Complex chains and workflows |
+| [LangGraph](https://github.com/langchain-ai/langgraph) | Orchestration | Python/JS | MIT | Graph-based agent workflows |
+| [CrewAI](https://github.com/crewAIInc/crewAI) | Framework | Python | MIT | Role-based multi-agent teams |
+| [AutoGen](https://github.com/microsoft/autogen) | Framework | Python | MIT | Multi-agent conversations |
+| [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | SDK | Python | MIT | OpenAI-native agent building |
+| [Goose](https://github.com/block/goose) | Agent | Rust/Python | Apache 2.0 | MCP-native production agent |
+| [Mastra](https://github.com/mastra-ai/mastra) | Framework | TypeScript | MIT | TypeScript-first agent building |
 
 ## Coding agents
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Type], [Pricing], [Best For],
-  [[Ona](https://ona.com)],
-  [Autonomous],
-  [Usage-based],
-  [Autonomous end-to-end development, fleet-scale migrations, enterprise
-  (VPC)],
-  [[Claude Code](https://claude.ai)],
-  [CLI + IDE],
-  [Usage-based],
-  [Deep codebase reasoning],
-  [[OpenAI Codex](https://openai.com/codex)],
-  [Cloud],
-  [Usage-based],
-  [Parallel task execution],
-  [[Cursor](https://cursor.com)],
-  [IDE],
-  [\$20/month],
-  [Real-time code generation],
-  [[Windsurf](https://codeium.com/windsurf)],
-  [IDE],
-  [Free/\$15/month],
-  [Multi-file cascade editing],
-  [[GitHub Copilot](https://github.com/features/copilot)],
-  [IDE + CLI],
-  [\$10-39/month],
-  [Workspace-aware completion],
-  [[Devin](https://devin.ai)],
-  [Autonomous],
-  [Usage-based],
-  [End-to-end task completion],
-)
-]
+| Tool | Type | Pricing | Best For |
+| --- | --- | --- | --- |
+| [Ona](https://ona.com) | Autonomous | Usage-based | Autonomous end-to-end development, fleet-scale migrations, enterprise
+  (VPC) |
+| [Claude Code](https://claude.ai) | CLI + IDE | Usage-based | Deep codebase reasoning |
+| [OpenAI Codex](https://openai.com/codex) | Cloud | Usage-based | Parallel task execution |
+| [Cursor](https://cursor.com) | IDE | $20/month | Real-time code generation |
+| [Windsurf](https://codeium.com/windsurf) | IDE | Free/$15/month | Multi-file cascade editing |
+| [GitHub Copilot](https://github.com/features/copilot) | IDE + CLI | $10-39/month | Workspace-aware completion |
+| [Devin](https://devin.ai) | Autonomous | Usage-based | End-to-end task completion |
 
 ## Context engineering
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Purpose], [Language], [License],
-  [[Distill](https://github.com/siddhant-k-code/distill)],
-  [Context deduplication and compression],
-  [Python],
-  [MIT],
-  [[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)],
-  [Local RAG and document management],
-  [JavaScript],
-  [MIT],
-  [[Chroma](https://github.com/chroma-core/chroma)],
-  [Vector database for embeddings],
-  [Python],
-  [Apache 2.0],
-  [[Weaviate](https://github.com/weaviate/weaviate)],
-  [Vector database],
-  [Go],
-  [BSD-3],
-  [[Qdrant](https://github.com/qdrant/qdrant)],
-  [Vector database],
-  [Rust],
-  [Apache 2.0],
-  [[skills.sh](https://skills.sh)],
-  [Open agent skills ecosystem (reusable SKILL.md files)],
-  [TypeScript],
-  [MIT],
-)
-]
+| Tool | Purpose | Language | License |
+| --- | --- | --- | --- |
+| [Distill](https://github.com/siddhant-k-code/distill) | Context deduplication and compression | Python | MIT |
+| [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | Local RAG and document management | JavaScript | MIT |
+| [Chroma](https://github.com/chroma-core/chroma) | Vector database for embeddings | Python | Apache 2.0 |
+| [Weaviate](https://github.com/weaviate/weaviate) | Vector database | Go | BSD-3 |
+| [Qdrant](https://github.com/qdrant/qdrant) | Vector database | Rust | Apache 2.0 |
+| [skills.sh](https://skills.sh) | Open agent skills ecosystem (reusable SKILL.md files) | TypeScript | MIT |
 
 ## Authorization & security
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Purpose], [Language], [License],
-  [[OpenFGA](https://github.com/openfga/openfga)],
-  [Zanzibar-style authorization],
-  [Go],
-  [Apache 2.0],
-  [[sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime)],
-  [Agent sandboxing],
-  [Python],
-  [MIT],
-  [[Bubblewrap](https://github.com/containers/bubblewrap)],
-  [Unprivileged sandboxing],
-  [C],
-  [LGPL],
-  [[gVisor](https://github.com/google/gvisor)],
-  [Application kernel for containers],
-  [Go],
-  [Apache 2.0],
-)
-]
+| Tool | Purpose | Language | License |
+| --- | --- | --- | --- |
+| [OpenFGA](https://github.com/openfga/openfga) | Zanzibar-style authorization | Go | Apache 2.0 |
+| [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) | Agent sandboxing | Python | MIT |
+| [Bubblewrap](https://github.com/containers/bubblewrap) | Unprivileged sandboxing | C | LGPL |
+| [gVisor](https://github.com/google/gvisor) | Application kernel for containers | Go | Apache 2.0 |
 
 ## Observability
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Purpose], [Language], [License],
-  [[OpenTelemetry](https://opentelemetry.io)],
-  [Distributed tracing and metrics],
-  [Multi],
-  [Apache 2.0],
-  [[Langfuse](https://github.com/langfuse/langfuse)],
-  [LLM observability platform],
-  [TypeScript],
-  [MIT],
-  [[LangSmith](https://smith.langchain.com)],
-  [LangChain observability],
-  [Python],
-  [Commercial],
-  [[Arize Phoenix](https://github.com/Arize-ai/phoenix)],
-  [ML observability],
-  [Python],
-  [Apache 2.0],
-)
-]
+| Tool | Purpose | Language | License |
+| --- | --- | --- | --- |
+| [OpenTelemetry](https://opentelemetry.io) | Distributed tracing and metrics | Multi | Apache 2.0 |
+| [Langfuse](https://github.com/langfuse/langfuse) | LLM observability platform | TypeScript | MIT |
+| [LangSmith](https://smith.langchain.com) | LangChain observability | Python | Commercial |
+| [Arize Phoenix](https://github.com/Arize-ai/phoenix) | ML observability | Python | Apache 2.0 |
 
 ## MCP ecosystem
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Purpose], [Language],
-  [[MCP SDK (TypeScript)](https://github.com/modelcontextprotocol/typescript-sdk)],
-  [Build MCP servers/clients],
-  [TypeScript],
-  [[MCP SDK (Python)](https://github.com/modelcontextprotocol/python-sdk)],
-  [Build MCP servers/clients],
-  [Python],
-  [[MCP Servers](https://github.com/modelcontextprotocol/servers)],
-  [Reference MCP server implementations],
-  [Multi],
-  [[MCP Inspector](https://github.com/modelcontextprotocol/inspector)],
-  [Debug and test MCP servers],
-  [TypeScript],
-)
-]
+| Tool | Purpose | Language |
+| --- | --- | --- |
+| [MCP SDK (TypeScript)](https://github.com/modelcontextprotocol/typescript-sdk) | Build MCP servers/clients | TypeScript |
+| [MCP SDK (Python)](https://github.com/modelcontextprotocol/python-sdk) | Build MCP servers/clients | Python |
+| [MCP Servers](https://github.com/modelcontextprotocol/servers) | Reference MCP server implementations | Multi |
+| [MCP Inspector](https://github.com/modelcontextprotocol/inspector) | Debug and test MCP servers | TypeScript |
 
 ## Local inference
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [Purpose], [Best For],
-  [[Ollama](https://ollama.ai)],
-  [Local model runner],
-  [Easy setup, many models],
-  [[llama.cpp](https://github.com/ggerganov/llama.cpp)],
-  [Optimized local inference],
-  [Performance-critical],
-  [[vLLM](https://github.com/vllm-project/vllm)],
-  [High-throughput serving],
-  [Production serving],
-  [[LocalAI](https://github.com/mudler/LocalAI)],
-  [OpenAI-compatible local API],
-  [Drop-in replacement],
-)
-]
+| Tool | Purpose | Best For |
+| --- | --- | --- |
+| [Ollama](https://ollama.ai) | Local model runner | Easy setup, many models |
+| [llama.cpp](https://github.com/ggerganov/llama.cpp) | Optimized local inference | Performance-critical |
+| [vLLM](https://github.com/vllm-project/vllm) | High-throughput serving | Production serving |
+| [LocalAI](https://github.com/mudler/LocalAI) | OpenAI-compatible local API | Drop-in replacement |

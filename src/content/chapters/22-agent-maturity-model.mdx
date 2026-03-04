@@ -39,55 +39,15 @@ agents safely."
 ![](/agentic-engineering-guide/images/fig-maturity-model.png) 
 
 ## Maturity assessment
-#align(center)[#table(
-  columns: 6,
-  align: (col, row) => (auto,auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Dimension], [Level 1], [Level 2], [Level 3], [Level 4], [Level 5],
-  [**Usage**],
-  [Experimenting],
-  [Individual],
-  [Team-wide],
-  [Multi-agent],
-  [Autonomous],
-  [**Context**],
-  [None],
-  [Ad hoc prompts],
-  [AGENTS.md],
-  [Knowledge graph],
-  [Self-updating],
-  [**Security**],
-  [None],
-  [None],
-  [Basic auth],
-  [OpenFGA],
-  [Full defense-in-depth],
-  [**Observability**],
-  [None],
-  [None],
-  [Basic logging],
-  [Full tracing],
-  [Anomaly detection],
-  [**Cost**],
-  [Unknown],
-  [Unknown],
-  [Tracked],
-  [Budgeted],
-  [Optimized],
-  [**Review**],
-  [None],
-  [Ad hoc],
-  [Guidelines],
-  [Formal policy],
-  [Automated + human],
-  [**Policies**],
-  [None],
-  [None],
-  [Informal],
-  [Documented],
-  [Enforced],
-)
-]
+| Dimension | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
+| --- | --- | --- | --- | --- | --- |
+| **Usage** | Experimenting | Individual | Team-wide | Multi-agent | Autonomous |
+| **Context** | None | Ad hoc prompts | AGENTS.md | Knowledge graph | Self-updating |
+| **Security** | None | None | Basic auth | OpenFGA | Full defense-in-depth |
+| **Observability** | None | None | Basic logging | Full tracing | Anomaly detection |
+| **Cost** | Unknown | Unknown | Tracked | Budgeted | Optimized |
+| **Review** | None | Ad hoc | Guidelines | Formal policy | Automated + human |
+| **Policies** | None | None | Informal | Documented | Enforced |
 
 ## Moving up the maturity curve
 ### Level 1 → Level 2: Individual adoption

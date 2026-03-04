@@ -75,34 +75,15 @@ else. An agentic search system returns the complete authentication flow
 across multiple files and services.
 
 ## When to use which
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Scenario], [RAG], [Agentic Search],
-  [Simple factual lookup],
-  [✅ Fast, cheap],
-  [Overkill],
-  [Multi-hop reasoning],
-  [❌ Single-hop only],
-  [✅ Iterative retrieval],
-  [Ambiguous queries],
-  [❌ Fixed interpretation],
-  [✅ Can clarify and refine],
-  [Cost-sensitive],
-  [✅ One retrieval],
-  [❌ Multiple retrievals],
-  [Latency-sensitive],
-  [✅ ~200ms],
-  [❌ Seconds to minutes],
-  [Complex codebase questions],
-  [❌ Surface-level],
-  [✅ Deep understanding],
-  [Real-time data],
-  [❌ Stale embeddings],
-  [✅ Live search],
-)
-]
+| Scenario | RAG | Agentic Search |
+| --- | --- | --- |
+| Simple factual lookup | ✅ Fast, cheap | Overkill |
+| Multi-hop reasoning | ❌ Single-hop only | ✅ Iterative retrieval |
+| Ambiguous queries | ❌ Fixed interpretation | ✅ Can clarify and refine |
+| Cost-sensitive | ✅ One retrieval | ❌ Multiple retrievals |
+| Latency-sensitive | ✅ ~200ms | ❌ Seconds to minutes |
+| Complex codebase questions | ❌ Surface-level | ✅ Deep understanding |
+| Real-time data | ❌ Stale embeddings | ✅ Live search |
 
 ## Hybrid approaches
 The best production systems use both RAG and agentic search, routing

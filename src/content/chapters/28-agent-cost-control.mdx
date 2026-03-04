@@ -28,28 +28,13 @@ Research from Zylos (February 2026) quantified the enterprise impact:
 
 The cost drivers that catch teams off guard:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Cost Driver], [Why It’s Hidden], [Impact],
-  [**Tool call overhead**],
-  [Each tool call adds schema tokens + result tokens],
-  [20-40% of total cost],
-  [**Output token premium**],
-  [Output tokens cost 3-4x input tokens],
-  [Verbose agents cost more],
-  [**Retry loops**],
-  [Failed tool calls trigger re-planning],
-  [2-5x cost on failures],
-  [**Context accumulation**],
-  [Each step adds to the context window],
-  [Later steps cost more],
-  [**Orchestration overhead**],
-  [Multi-agent routing, handoffs],
-  [10-20% overhead],
-)
-]
+| Cost Driver | Why It’s Hidden | Impact |
+| --- | --- | --- |
+| **Tool call overhead** | Each tool call adds schema tokens + result tokens | 20-40% of total cost |
+| **Output token premium** | Output tokens cost 3-4x input tokens | Verbose agents cost more |
+| **Retry loops** | Failed tool calls trigger re-planning | 2-5x cost on failures |
+| **Context accumulation** | Each step adds to the context window | Later steps cost more |
+| **Orchestration overhead** | Multi-agent routing, handoffs | 10-20% overhead |
 
 ## The four pillars of agent cost control
 **Pillar 1: Model Routing**
@@ -89,28 +74,13 @@ Set hard limits per task:
 
 Shorter prompts cost less. Measure and optimize:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Technique], [Token Savings], [Quality Impact],
-  [**Remove redundant instructions**],
-  [10-30%],
-  [None],
-  [**Use structured examples instead of verbose descriptions**],
-  [20-40%],
-  [Often improves],
-  [**Compress system prompts**],
-  [15-25%],
-  [Minimal if done carefully],
-  [**Use reference IDs instead of full content**],
-  [30-60%],
-  [Requires tool support],
-  [**Prune conversation history**],
-  [40-70%],
-  [Risk of losing context],
-)
-]
+| Technique | Token Savings | Quality Impact |
+| --- | --- | --- |
+| **Remove redundant instructions** | 10-30% | None |
+| **Use structured examples instead of verbose descriptions** | 20-40% | Often improves |
+| **Compress system prompts** | 15-25% | Minimal if done carefully |
+| **Use reference IDs instead of full content** | 30-60% | Requires tool support |
+| **Prune conversation history** | 40-70% | Risk of losing context |
 
 ## Building a cost culture
 Cost control isn’t just a technical problem - it’s a cultural one. Teams
@@ -142,28 +112,13 @@ be valued as such.
 ## LLM FinOps tooling
 Track costs like you track cloud infrastructure costs:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [What It Does], [Pricing],
-  [**Helicone**],
-  [LLM proxy with cost tracking, caching],
-  [Free tier, then usage-based],
-  [**Portkey**],
-  [AI gateway with budgets, rate limiting],
-  [Free tier available],
-  [**LangFuse**],
-  [Open-source LLM observability + cost],
-  [Self-hosted free, cloud paid],
-  [**Braintrust**],
-  [Eval + cost tracking in one platform],
-  [Usage-based],
-  [**Custom**],
-  [OpenTelemetry + your own dashboards],
-  [Engineering time],
-)
-]
+| Tool | What It Does | Pricing |
+| --- | --- | --- |
+| **Helicone** | LLM proxy with cost tracking, caching | Free tier, then usage-based |
+| **Portkey** | AI gateway with budgets, rate limiting | Free tier available |
+| **LangFuse** | Open-source LLM observability + cost | Self-hosted free, cloud paid |
+| **Braintrust** | Eval + cost tracking in one platform | Usage-based |
+| **Custom** | OpenTelemetry + your own dashboards | Engineering time |
 
 ## Cost monitoring dashboard
 What to track on your agent cost dashboard.

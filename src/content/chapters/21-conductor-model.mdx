@@ -43,33 +43,13 @@ alone. The conductor model creates a natural rhythm that’s more
 sustainable than either pure coding or pure reviewing.
 
 ## What conductors do
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Activity], [Time Before], [Time After], [Change],
-  [Writing code],
-  [60%],
-  [15%],
-  [-45%],
-  [Reviewing code],
-  [15%],
-  [35%],
-  [+20%],
-  [Specifying intent],
-  [5%],
-  [20%],
-  [+15%],
-  [Architecture decisions],
-  [10%],
-  [20%],
-  [+10%],
-  [Debugging],
-  [10%],
-  [10%],
-  [Same],
-)
-]
+| Activity | Time Before | Time After | Change |
+| --- | --- | --- | --- |
+| Writing code | 60% | 15% | -45% |
+| Reviewing code | 15% | 35% | +20% |
+| Specifying intent | 5% | 20% | +15% |
+| Architecture decisions | 10% | 20% | +10% |
+| Debugging | 10% | 10% | Same |
 
 The conductor spends more time on the activities that require human
 judgment and less time on the activities that agents can handle.
@@ -85,23 +65,13 @@ The conductor role requires a different skill set than traditional
 engineering. Some of these skills are new. Others are existing skills
 that become more important.
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [Skill], [Why It Matters],
-  [**Specification writing**],
-  [Clear specs produce better agent output],
-  [**Context curation**],
-  [Knowing what context to provide (and what to omit)],
-  [**Quality judgment**],
-  [Evaluating agent output for correctness, style, and risk],
-  [**Task decomposition**],
-  [Breaking complex work into agent-sized pieces],
-  [**Risk assessment**],
-  [Knowing when to let the agent run vs. when to intervene],
-)
-]
+| Skill | Why It Matters |
+| --- | --- |
+| **Specification writing** | Clear specs produce better agent output |
+| **Context curation** | Knowing what context to provide (and what to omit) |
+| **Quality judgment** | Evaluating agent output for correctness, style, and risk |
+| **Task decomposition** | Breaking complex work into agent-sized pieces |
+| **Risk assessment** | Knowing when to let the agent run vs. when to intervene |
 
 **Specification writing** is the most important new skill. The
 quality of agent output is directly proportional to the quality of the
@@ -197,28 +167,13 @@ the background) and provides the raw material for human judgment (PRs,
 reports, analysis).
 
 ## The conductor anti-patterns
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Anti-Pattern], [Description], [Fix],
-  [**Micromanaging**],
-  [Watching the agent work in real-time, intervening constantly],
-  [Set clear specs, let it run, review the result],
-  [**Rubber-stamping**],
-  [Approving agent output without review],
-  [Establish review checklists, enforce them],
-  [**Over-delegating**],
-  [Giving the agent tasks that require human judgment],
-  [Keep architecture, security, and design decisions human],
-  [**Under-delegating**],
-  [Doing work manually that agents could handle],
-  [Start with low-risk tasks, build trust gradually],
-  [**Prompt-tweaking**],
-  [Spending hours perfecting prompts instead of improving context],
-  [Invest in AGENTS.md, context engineering, better specs],
-)
-]
+| Anti-Pattern | Description | Fix |
+| --- | --- | --- |
+| **Micromanaging** | Watching the agent work in real-time, intervening constantly | Set clear specs, let it run, review the result |
+| **Rubber-stamping** | Approving agent output without review | Establish review checklists, enforce them |
+| **Over-delegating** | Giving the agent tasks that require human judgment | Keep architecture, security, and design decisions human |
+| **Under-delegating** | Doing work manually that agents could handle | Start with low-risk tasks, build trust gradually |
+| **Prompt-tweaking** | Spending hours perfecting prompts instead of improving context | Invest in AGENTS.md, context engineering, better specs |
 
 ## Transitioning to the conductor model
 The transition from traditional engineering to the conductor model is

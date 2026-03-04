@@ -48,25 +48,12 @@ Post-AI:
 ### Pattern 3: The open source flood
 AI made contributing easier. It didn’t make contributions better.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Metric], [Before AI Agents], [After AI Agents],
-  [PRs per week (maintainer)],
-  [20-25],
-  [100+],
-  [Sloppy/AI-generated PRs],
-  [~5%],
-  [~40%],
-  [Review time per PR],
-  [15 min],
-  [15 min (unchanged)],
-  [Total review time per week],
-  [5-6 hours],
-  [25+ hours],
-)
-]
+| Metric | Before AI Agents | After AI Agents |
+| --- | --- | --- |
+| PRs per week (maintainer) | 20-25 | 100+ |
+| Sloppy/AI-generated PRs | ~5% | ~40% |
+| Review time per PR | 15 min | 15 min (unchanged) |
+| Total review time per week | 5-6 hours | 25+ hours |
 
 The review burden didn’t just increase for individuals - it scaled
 across the entire open source ecosystem.
@@ -215,31 +202,14 @@ Under 30 seconds, check that your tests are catching real issues.
 
 **The hierarchy of backpressure (strongest to weakest):**
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Layer], [What It Catches], [Agent Self-Correction Rate],
-  [Type system (strict TS, Rust, Go)],
-  [Wrong types, missing fields, impossible states],
-  [~95%],
-  [Test suite (fast, \< 2 min)],
-  [Regressions, logic errors],
-  [~80%],
-  [Linters + pre-commit hooks],
-  [Style, dead code, imports],
-  [~99%],
-  [Architecture enforcement (ArchUnit)],
-  [Boundary violations, circular deps],
-  [~90%],
-  [Visual verification (Playwright)],
-  [UI regressions],
-  [~70%],
-  [Human review],
-  [Judgment calls, architecture fit],
-  [N/A],
-)
-]
+| Layer | What It Catches | Agent Self-Correction Rate |
+| --- | --- | --- |
+| Type system (strict TS, Rust, Go) | Wrong types, missing fields, impossible states | ~95% |
+| Test suite (fast, &lt; 2 min) | Regressions, logic errors | ~80% |
+| Linters + pre-commit hooks | Style, dead code, imports | ~99% |
+| Architecture enforcement (ArchUnit) | Boundary violations, circular deps | ~90% |
+| Visual verification (Playwright) | UI regressions | ~70% |
+| Human review | Judgment calls, architecture fit | N/A |
 
 Human review should be last, not first. By the time code reaches you,
 the trivial issues should already be resolved.

@@ -44,41 +44,15 @@ across multiple messages.
 No single defense is sufficient. Use defense in depth - multiple layers,
 each catching what the previous layers miss.
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Strategy], [Description], [Effectiveness], [Trade-off],
-  [**Input sanitization**],
-  [Strip known injection patterns],
-  [Medium],
-  [False positives on legitimate content],
-  [**Instruction hierarchy**],
-  [System prompt \> user prompt \> retrieved data],
-  [Medium],
-  [Models don’t always respect hierarchy],
-  [**Perplexity detection**],
-  [Flag anomalous token sequences],
-  [Medium],
-  [Fast, but misses sophisticated attacks],
-  [**Semantic similarity**],
-  [Compare against known injection patterns],
-  [High],
-  [Slower, requires pattern database],
-  [**Output filtering**],
-  [Block actions that match exfiltration patterns],
-  [High],
-  [Can block legitimate operations],
-  [**Sandboxing**],
-  [Limit what the agent can do regardless of intent],
-  [Very High],
-  [Reduces agent capability],
-  [**Human-in-the-loop**],
-  [Require approval for sensitive actions],
-  [Very High],
-  [Adds latency, doesn’t scale],
-)
-]
+| Strategy | Description | Effectiveness | Trade-off |
+| --- | --- | --- | --- |
+| **Input sanitization** | Strip known injection patterns | Medium | False positives on legitimate content |
+| **Instruction hierarchy** | System prompt > user prompt > retrieved data | Medium | Models don’t always respect hierarchy |
+| **Perplexity detection** | Flag anomalous token sequences | Medium | Fast, but misses sophisticated attacks |
+| **Semantic similarity** | Compare against known injection patterns | High | Slower, requires pattern database |
+| **Output filtering** | Block actions that match exfiltration patterns | High | Can block legitimate operations |
+| **Sandboxing** | Limit what the agent can do regardless of intent | Very High | Reduces agent capability |
+| **Human-in-the-loop** | Require approval for sensitive actions | Very High | Adds latency, doesn’t scale |
 
 ### The defense hierarchy
 The most effective defense strategy follows a hierarchy from structural
@@ -121,25 +95,12 @@ calls to attacker-controlled servers. In each case, the agent receives
 data it believes is legitimate and processes it as context for its next
 action.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Scenario], [Attack Vector], [Impact],
-  [Compromised MCP server],
-  [Malicious tool responses],
-  [Agent follows embedded instructions],
-  [Man-in-the-middle],
-  [Modified API responses],
-  [Agent acts on false data],
-  [Supply chain attack],
-  [Malicious npm/pip package],
-  [Agent executes malicious code],
-  [DNS hijacking],
-  [Redirected API calls],
-  [Data exfiltration],
-)
-]
+| Scenario | Attack Vector | Impact |
+| --- | --- | --- |
+| Compromised MCP server | Malicious tool responses | Agent follows embedded instructions |
+| Man-in-the-middle | Modified API responses | Agent acts on false data |
+| Supply chain attack | Malicious npm/pip package | Agent executes malicious code |
+| DNS hijacking | Redirected API calls | Data exfiltration |
 
 The defense against tool poisoning is response validation. Every tool
 response should be validated against an expected schema before it’s

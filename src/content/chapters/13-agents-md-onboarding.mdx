@@ -60,31 +60,14 @@ Database queries must use parameterized queries
 (platform-specific bugs, timeout workarounds, etc.)
 
 ## AGENTS.md vs. other context files
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [File], [Purpose], [Audience],
-  [**README.md**],
-  [Project overview, setup instructions],
-  [Human developers],
-  [**AGENTS.md**],
-  [Agent-specific instructions, conventions],
-  [AI agents],
-  [**CONTRIBUTING.md**],
-  [Contribution guidelines],
-  [Human contributors],
-  [**.cursorrules**],
-  [Cursor-specific instructions],
-  [Cursor IDE],
-  [**.clinerules**],
-  [Cline-specific instructions],
-  [Cline extension],
-  [**CLAUDE.md**],
-  [Claude Code-specific instructions],
-  [Claude Code],
-)
-]
+| File | Purpose | Audience |
+| --- | --- | --- |
+| **README.md** | Project overview, setup instructions | Human developers |
+| **AGENTS.md** | Agent-specific instructions, conventions | AI agents |
+| **CONTRIBUTING.md** | Contribution guidelines | Human contributors |
+| **.cursorrules** | Cursor-specific instructions | Cursor IDE |
+| **.clinerules** | Cline-specific instructions | Cline extension |
+| **CLAUDE.md** | Claude Code-specific instructions | Claude Code |
 
 The problem is fragmentation. Every tool has its own context file
 format. If you maintain all of them, you’re duplicating information
@@ -191,28 +174,13 @@ weeks of debugging agent failures caused by outdated instructions.
 ## Measuring AGENTS.md effectiveness
 How do you know if your AGENTS.md is working?
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Metric], [How to Measure], [Good Target],
-  [Agent first-attempt success rate],
-  [% of tasks completed without human correction],
-  [\> 70%],
-  [Convention violations],
-  [Lint errors in agent-generated code],
-  [\< 5% of lines],
-  [Test pass rate],
-  [% of agent-generated code that passes tests],
-  [\> 90%],
-  [Review comments per PR],
-  [Average human review comments on agent PRs],
-  [\< 3],
-  [Time to first useful output],
-  [How long before the agent produces something usable],
-  [\< 5 minutes],
-)
-]
+| Metric | How to Measure | Good Target |
+| --- | --- | --- |
+| Agent first-attempt success rate | % of tasks completed without human correction | > 70% |
+| Convention violations | Lint errors in agent-generated code | &lt; 5% of lines |
+| Test pass rate | % of agent-generated code that passes tests | > 90% |
+| Review comments per PR | Average human review comments on agent PRs | &lt; 3 |
+| Time to first useful output | How long before the agent produces something usable | &lt; 5 minutes |
 
 If your agent consistently violates conventions or fails tests, your
 AGENTS.md needs improvement.
@@ -254,25 +222,12 @@ codebase - the structure, conventions, and constraints. GitHub Agentic
 Workflows tell agents what to do with your codebase - the tasks,
 triggers, and goals. They’re complementary:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [], [AGENTS.md], [Agentic Workflows],
-  [**Purpose**],
-  [Codebase context for agents],
-  [Task automation with agents],
-  [**Format**],
-  [Markdown (descriptive)],
-  [Markdown (prescriptive)],
-  [**Scope**],
-  ["Here’s how our code works"],
-  ["Here’s what to do with our code"],
-  [**Trigger**],
-  [Agent reads on startup],
-  [Events trigger execution],
-)
-]
+|  | AGENTS.md | Agentic Workflows |
+| --- | --- | --- |
+| **Purpose** | Codebase context for agents | Task automation with agents |
+| **Format** | Markdown (descriptive) | Markdown (prescriptive) |
+| **Scope** | "Here’s how our code works" | "Here’s what to do with our code" |
+| **Trigger** | Agent reads on startup | Events trigger execution |
 
 The combination of AGENTS.md and Agentic Workflows creates a powerful
 automation layer. AGENTS.md ensures the agent understands your codebase.
@@ -349,24 +304,11 @@ features.
 These three concepts occupy different layers of the agent knowledge
 stack:
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Layer], [Mechanism], [Scope], [Example],
-  [**Project context**],
-  [AGENTS.md],
-  [One codebase],
-  ["Use camelCase, run pnpm test"],
-  [**Procedural knowledge**],
-  [Skills],
-  [Cross-project],
-  ["How to write good logs"],
-  [**Tool access**],
-  [MCP],
-  [Runtime capabilities],
-  ["Read this database, call this API"],
-)]
+| Layer | Mechanism | Scope | Example |
+| --- | --- | --- | --- |
+| **Project context** | AGENTS.md | One codebase | "Use camelCase, run pnpm test" |
+| **Procedural knowledge** | Skills | Cross-project | "How to write good logs" |
+| **Tool access** | MCP | Runtime capabilities | "Read this database, call this API" |
 
 
 AGENTS.md provides the "where" - the specific conventions and structure

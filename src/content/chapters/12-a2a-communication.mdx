@@ -51,31 +51,14 @@ let the calling agent understand what the target agent can do without
 prior knowledge of its implementation.
 
 ## MCP vs. A2A
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Dimension], [MCP], [A2A],
-  [**Purpose**],
-  [Agent ↔ Tool],
-  [Agent ↔ Agent],
-  [**Communication**],
-  [Synchronous (request/response)],
-  [Async (task lifecycle)],
-  [**Discovery**],
-  [Tool definitions],
-  [Agent Cards],
-  [**State**],
-  [Stateless],
-  [Stateful (task tracking)],
-  [**Duration**],
-  [Milliseconds],
-  [Minutes to hours],
-  [**Feedback**],
-  [Single response],
-  [Streaming updates],
-)
-]
+| Dimension | MCP | A2A |
+| --- | --- | --- |
+| **Purpose** | Agent ↔ Tool | Agent ↔ Agent |
+| **Communication** | Synchronous (request/response) | Async (task lifecycle) |
+| **Discovery** | Tool definitions | Agent Cards |
+| **State** | Stateless | Stateful (task tracking) |
+| **Duration** | Milliseconds | Minutes to hours |
+| **Feedback** | Single response | Streaming updates |
 
 They’re complementary, not competing.
 
@@ -111,29 +94,12 @@ conversation history.
 ## The protocol landscape
 Beyond MCP and A2A, several protocols are emerging:
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Protocol], [Sponsor], [Purpose], [Status],
-  [**MCP**],
-  [Anthropic / AAIF],
-  [Agent ↔ Tool],
-  [Production],
-  [**A2A**],
-  [Google],
-  [Agent ↔ Agent],
-  [Early adoption],
-  [**ACP**],
-  [Community],
-  [Agent Communication],
-  [Experimental],
-  [**ANP**],
-  [Community],
-  [Agent Network],
-  [Experimental],
-)
-]
+| Protocol | Sponsor | Purpose | Status |
+| --- | --- | --- | --- |
+| **MCP** | Anthropic / AAIF | Agent ↔ Tool | Production |
+| **A2A** | Google | Agent ↔ Agent | Early adoption |
+| **ACP** | Community | Agent Communication | Experimental |
+| **ANP** | Community | Agent Network | Experimental |
 
 The likely convergence: MCP for tools, A2A for agents, with ACP/ANP
 addressing niche use cases. For engineering teams making protocol

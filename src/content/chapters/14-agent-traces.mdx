@@ -59,23 +59,13 @@ are stable enough for production use.
 
 The key concepts map naturally:
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [OTel Concept], [Agent Equivalent],
-  [**Trace**],
-  [Complete agent session (task start to completion)],
-  [**Span**],
-  [Individual agent action (tool call, LLM request, decision)],
-  [**Attributes**],
-  [Agent-specific metadata (tokens, cost, model, tool name)],
-  [**Events**],
-  [Significant moments (permission denied, human approval, error)],
-  [**Links**],
-  [Connections between agent sessions (delegation, escalation)],
-)
-]
+| OTel Concept | Agent Equivalent |
+| --- | --- |
+| **Trace** | Complete agent session (task start to completion) |
+| **Span** | Individual agent action (tool call, LLM request, decision) |
+| **Attributes** | Agent-specific metadata (tokens, cost, model, tool name) |
+| **Events** | Significant moments (permission denied, human approval, error) |
+| **Links** | Connections between agent sessions (delegation, escalation) |
 
 ## Instrumenting an agent
 Instrumenting an agent means wrapping every significant action - LLM

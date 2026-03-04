@@ -23,28 +23,13 @@ and how much of your codebase the agent can "see" at any given time.
 Understanding this constraint - and engineering around it - is the
 single most impactful skill in agent development.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Model], [Context Window], [Approximate Pages of Text],
-  [GPT-5.2],
-  [400K tokens],
-  [~640 pages],
-  [GPT-5.3-Codex],
-  [400K tokens],
-  [~640 pages],
-  [Claude Sonnet 4.6],
-  [200K (1M beta)],
-  [~320 pages (1,600 beta)],
-  [Claude Opus 4.6],
-  [200K (1M beta)],
-  [~320 pages (1,600 beta)],
-  [Gemini 3.1 Pro],
-  [1M tokens],
-  [~1,600 pages],
-)
-]
+| Model | Context Window | Approximate Pages of Text |
+| --- | --- | --- |
+| GPT-5.2 | 400K tokens | ~640 pages |
+| GPT-5.3-Codex | 400K tokens | ~640 pages |
+| Claude Sonnet 4.6 | 200K (1M beta) | ~320 pages (1,600 beta) |
+| Claude Opus 4.6 | 200K (1M beta) | ~320 pages (1,600 beta) |
+| Gemini 3.1 Pro | 1M tokens | ~1,600 pages |
 
 These numbers look large. They’re not.
 
@@ -87,25 +72,11 @@ Tokens cost money, and the cost scales linearly with context size. Every
 token you send is a token you pay for, and every token the model
 processes adds latency.
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Approach], [Tokens Sent], [Cost per Request], [Latency],
-  [Naive (dump everything)],
-  [100K],
-  [\$0.30],
-  [~8s],
-  [With context engineering],
-  [15K],
-  [\$0.045],
-  [~2s],
-  [**Savings**],
-  [**85%**],
-  [**85%**],
-  [**75%**],
-)
-]
+| Approach | Tokens Sent | Cost per Request | Latency |
+| --- | --- | --- | --- |
+| Naive (dump everything) | 100K | $0.30 | ~8s |
+| With context engineering | 15K | $0.045 | ~2s |
+| **Savings** | **85%** | **85%** | **75%** |
 
 At scale, this is the difference between a viable product and a money
 pit. A team running 500 agent tasks per day at 100K tokens each spends

@@ -72,21 +72,12 @@ the original FAQ.
 
 "Best" depends on your use case:
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [Selection Strategy], [When to Use],
-  [**Most detailed**],
-  [Technical documentation, API references],
-  [**Most recent**],
-  [Rapidly changing codebases, changelogs],
-  [**Most authoritative**],
-  [Security policies, compliance docs],
-  [**Shortest**],
-  [Token-constrained scenarios],
-)
-]
+| Selection Strategy | When to Use |
+| --- | --- |
+| **Most detailed** | Technical documentation, API references |
+| **Most recent** | Rapidly changing codebases, changelogs |
+| **Most authoritative** | Security policies, compliance docs |
+| **Shortest** | Token-constrained scenarios |
 
 The key insight: you don’t need all five versions of the same fact. You
 need one good one.
@@ -122,23 +113,10 @@ variations of the same information.
 The final layer removes redundancy without losing signal. The critical
 decision here is deterministic versus non-deterministic compression.
 
-#align(center)[#table(
-  columns: 5,
-  align: (col, row) => (auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Approach], [Latency], [Cost], [Deterministic], [Debuggable],
-  [LLM-based summarization],
-  [~500ms],
-  [\$0.01/call],
-  [No],
-  [No],
-  [Algorithmic deduplication],
-  [~12ms],
-  [\$0.0001/call],
-  [Yes],
-  [Yes],
-)
-]
+| Approach | Latency | Cost | Deterministic | Debuggable |
+| --- | --- | --- | --- | --- |
+| LLM-based summarization | ~500ms | $0.01/call | No | No |
+| Algorithmic deduplication | ~12ms | $0.0001/call | Yes | Yes |
 
 LLM-based summarization uses a language model to condense the selected
 chunks into a shorter summary. It produces readable output but
@@ -192,33 +170,13 @@ accuracy).
 
 Results from production deployments:
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Metric], [Before Distill], [After Distill], [Improvement],
-  [Context tokens],
-  [45K],
-  [12K],
-  [73% reduction],
-  [Redundant chunks],
-  [30-40%],
-  [\<2%],
-  [~95% reduction],
-  [Output consistency],
-  [62%],
-  [89%],
-  [+27 percentage points],
-  [Cost per request],
-  [\$0.135],
-  [\$0.036],
-  [73% reduction],
-  [Latency],
-  [8.2s],
-  [2.1s],
-  [74% reduction],
-)
-]
+| Metric | Before Distill | After Distill | Improvement |
+| --- | --- | --- | --- |
+| Context tokens | 45K | 12K | 73% reduction |
+| Redundant chunks | 30-40% | &lt;2% | ~95% reduction |
+| Output consistency | 62% | 89% | +27 percentage points |
+| Cost per request | $0.135 | $0.036 | 73% reduction |
+| Latency | 8.2s | 2.1s | 74% reduction |
 
 ## Meta-MCP: Compressing tool definitions
 A pattern from the Japanese developer community (documented on Zenn.dev)

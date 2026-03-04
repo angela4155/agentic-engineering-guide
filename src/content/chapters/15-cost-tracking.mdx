@@ -16,37 +16,14 @@ which is non-deterministic. The same task might cost \$0.50 one day and
 much context it accumulates, and whether it gets stuck in a retry loop.
 Without tracking, costs spiral:
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Scenario], [Tokens], [Cost], [Time],
-  [Simple bug fix],
-  [15K],
-  [\$0.05],
-  [2 min],
-  [Feature implementation],
-  [150K],
-  [\$0.45],
-  [15 min],
-  [Complex refactoring],
-  [500K],
-  [\$1.50],
-  [45 min],
-  [Runaway agent (no limits)],
-  [5M+],
-  [\$15+],
-  [Hours],
-  [Team of 10 engineers × 20 tasks/day],
-  [30M/day],
-  [\$90/day],
-  [-],
-  [**Monthly team cost**],
-  [**~900M**],
-  [**~\$2,700/month**],
-  [-],
-)
-]
+| Scenario | Tokens | Cost | Time |
+| --- | --- | --- | --- |
+| Simple bug fix | 15K | $0.05 | 2 min |
+| Feature implementation | 150K | $0.45 | 15 min |
+| Complex refactoring | 500K | $1.50 | 45 min |
+| Runaway agent (no limits) | 5M+ | $15+ | Hours |
+| Team of 10 engineers × 20 tasks/day | 30M/day | $90/day | - |
+| **Monthly team cost** | **~900M** | **~$2,700/month** | - |
 
 Without cost tracking, a single runaway agent can cost more than a month
 of normal usage.
@@ -89,25 +66,12 @@ Reducing context size directly reduces cost. This is the
 highest-leverage cost optimization because it reduces tokens on every
 turn of every session:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Optimization], [Token Reduction], [Cost Reduction],
-  [Distill (deduplication)],
-  [30-40%],
-  [30-40%],
-  [Meta-MCP (tool compression)],
-  [88% of tool tokens],
-  [10-15% overall],
-  [Selective context loading],
-  [50-70%],
-  [50-70%],
-  [**Combined**],
-  [**60-80%**],
-  [**60-80%**],
-)
-]
+| Optimization | Token Reduction | Cost Reduction |
+| --- | --- | --- |
+| Distill (deduplication) | 30-40% | 30-40% |
+| Meta-MCP (tool compression) | 88% of tool tokens | 10-15% overall |
+| Selective context loading | 50-70% | 50-70% |
+| **Combined** | **60-80%** | **60-80%** |
 
 ### Strategy 3: Budget caps
 Set hard limits at every level:

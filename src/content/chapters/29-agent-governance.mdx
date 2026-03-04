@@ -72,43 +72,23 @@ How existing compliance requirements map to agent systems:
 
 **SOC 2 Type II**
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [SOC 2 Criteria], [Agent Requirement],
-  [**CC6.1** Access control],
-  [Fine-grained authorization per agent (OpenFGA/Zanzibar)],
-  [**CC6.3** Role-based access],
-  [Agent roles with least-privilege permissions],
-  [**CC7.2** System monitoring],
-  [Real-time agent trace monitoring and alerting],
-  [**CC8.1** Change management],
-  [Prompt versioning, eval gates before deployment],
-  [**PI1.1** Data privacy],
-  [PII detection/redaction in agent context],
-)
-]
+| SOC 2 Criteria | Agent Requirement |
+| --- | --- |
+| **CC6.1** Access control | Fine-grained authorization per agent (OpenFGA/Zanzibar) |
+| **CC6.3** Role-based access | Agent roles with least-privilege permissions |
+| **CC7.2** System monitoring | Real-time agent trace monitoring and alerting |
+| **CC8.1** Change management | Prompt versioning, eval gates before deployment |
+| **PI1.1** Data privacy | PII detection/redaction in agent context |
 
 **GDPR**
 
-#align(center)[#table(
-  columns: 2,
-  align: (col, row) => (auto,auto,).at(col),
-  inset: 6pt,
-  [GDPR Article], [Agent Requirement],
-  [**Art. 5** Data minimization],
-  [Agents should access only necessary data],
-  [**Art. 13** Right to information],
-  [Users must know when an agent processes their data],
-  [**Art. 17** Right to erasure],
-  [Agent memory/logs containing personal data must be deletable],
-  [**Art. 22** Automated decision-making],
-  [Users can request human review of agent decisions],
-  [**Art. 35** Impact assessment],
-  [DPIA required for high-risk agent deployments],
-)
-]
+| GDPR Article | Agent Requirement |
+| --- | --- |
+| **Art. 5** Data minimization | Agents should access only necessary data |
+| **Art. 13** Right to information | Users must know when an agent processes their data |
+| **Art. 17** Right to erasure | Agent memory/logs containing personal data must be deletable |
+| **Art. 22** Automated decision-making | Users can request human review of agent decisions |
+| **Art. 35** Impact assessment | DPIA required for high-risk agent deployments |
 
 **[EU AI Act**
 (effective 2026)](https://artificialintelligenceact.eu)
@@ -116,25 +96,12 @@ How existing compliance requirements map to agent systems:
 The EU AI Act classifies AI systems by risk level. Most enterprise
 agents fall into "limited risk" or "high risk":
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Risk Level], [Agent Examples], [Requirements],
-  [**Minimal**],
-  [Code formatting, linting],
-  [None],
-  [**Limited**],
-  [Code review, documentation],
-  [Transparency: users must know it’s AI],
-  [**High**],
-  [HR screening, financial decisions],
-  [Conformity assessment, human oversight, logging],
-  [**Unacceptable**],
-  [Social scoring, manipulation],
-  [Prohibited],
-)
-]
+| Risk Level | Agent Examples | Requirements |
+| --- | --- | --- |
+| **Minimal** | Code formatting, linting | None |
+| **Limited** | Code review, documentation | Transparency: users must know it’s AI |
+| **High** | HR screening, financial decisions | Conformity assessment, human oversight, logging |
+| **Unacceptable** | Social scoring, manipulation | Prohibited |
 
 ## PII detection and redaction
 Agents process text that may contain personal data - names, email

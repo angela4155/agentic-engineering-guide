@@ -30,63 +30,18 @@ month, for a team of ten engineers, this can be the difference between
 because the simple tasks don’t benefit from the more expensive model.
 
 ## The model landscape (February 2026)
-#align(center)[#table(
-  columns: 5,
-  align: (col, row) => (auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Model], [Best For], [Context], [Input \$/1M], [Output \$/1M],
-  [**GPT-5.2**],
-  [General reasoning, complex tasks],
-  [400K],
-  [\$1.75],
-  [\$14.00],
-  [**GPT-5.3-Codex**],
-  [Agentic coding, long-running tasks],
-  [400K],
-  [\$1.75],
-  [\$14.00],
-  [**GPT-5.2-mini**],
-  [Classification, extraction, simple tasks],
-  [400K],
-  [\$0.15],
-  [\$0.60],
-  [**Claude Opus 4.6**],
-  [Long-context, nuanced reasoning],
-  [200K (1M beta)],
-  [\$5.00],
-  [\$25.00],
-  [**Claude Sonnet 4.6**],
-  [Code generation, balanced quality/cost],
-  [200K (1M beta)],
-  [\$3.00],
-  [\$15.00],
-  [**Claude Haiku 4**],
-  [Fast, cheap, simple tasks],
-  [200K],
-  [\$1.00],
-  [\$5.00],
-  [**Gemini 3.1 Pro**],
-  [Multimodal, long context],
-  [1M],
-  [\$2.00],
-  [\$12.00],
-  [**Gemini 3 Flash**],
-  [Speed-optimized, cheap],
-  [1M],
-  [\$0.075],
-  [\$0.30],
-  [**DeepSeek V3.2**],
-  [Code, math, open-source],
-  [128K],
-  [\$0.27],
-  [\$1.10],
-  [**Qwen 3.5 397B**],
-  [Self-hosted, open-weight],
-  [128K],
-  [Self-hosted],
-  [Self-hosted],
-)
-]
+| Model | Best For | Context | Input $/1M | Output $/1M |
+| --- | --- | --- | --- | --- |
+| **GPT-5.2** | General reasoning, complex tasks | 400K | $1.75 | $14.00 |
+| **GPT-5.3-Codex** | Agentic coding, long-running tasks | 400K | $1.75 | $14.00 |
+| **GPT-5.2-mini** | Classification, extraction, simple tasks | 400K | $0.15 | $0.60 |
+| **Claude Opus 4.6** | Long-context, nuanced reasoning | 200K (1M beta) | $5.00 | $25.00 |
+| **Claude Sonnet 4.6** | Code generation, balanced quality/cost | 200K (1M beta) | $3.00 | $15.00 |
+| **Claude Haiku 4** | Fast, cheap, simple tasks | 200K | $1.00 | $5.00 |
+| **Gemini 3.1 Pro** | Multimodal, long context | 1M | $2.00 | $12.00 |
+| **Gemini 3 Flash** | Speed-optimized, cheap | 1M | $0.075 | $0.30 |
+| **DeepSeek V3.2** | Code, math, open-source | 128K | $0.27 | $1.10 |
+| **Qwen 3.5 397B** | Self-hosted, open-weight | 128K | Self-hosted | Self-hosted |
 
 > Prices change frequently. The principle - route by task complexity -
 > doesn’t.
@@ -230,38 +185,13 @@ that one model struggles with might be easy for another.
 ## Fine-Tuning vs. prompting vs. RAG
 When to use each approach:
 
-#align(center)[#table(
-  columns: 5,
-  align: (col, row) => (auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Approach], [Best When], [Cost], [Latency], [Maintenance],
-  [**Prompting**],
-  [Task is well-defined, few-shot examples work],
-  [Low (per-call)],
-  [Low],
-  [Low],
-  [**RAG**],
-  [Need access to external/changing knowledge],
-  [Medium],
-  [Medium],
-  [Medium],
-  [**Fine-tuning**],
-  [High volume of similar tasks, need consistency],
-  [High (upfront)],
-  [Low],
-  [High],
-  [**Prompt + RAG**],
-  [Complex tasks with knowledge requirements],
-  [Medium],
-  [Medium],
-  [Medium],
-  [**Fine-tuned + RAG**],
-  [Production systems with strict quality needs],
-  [High],
-  [Low],
-  [High],
-)
-]
+| Approach | Best When | Cost | Latency | Maintenance |
+| --- | --- | --- | --- | --- |
+| **Prompting** | Task is well-defined, few-shot examples work | Low (per-call) | Low | Low |
+| **RAG** | Need access to external/changing knowledge | Medium | Medium | Medium |
+| **Fine-tuning** | High volume of similar tasks, need consistency | High (upfront) | Low | High |
+| **Prompt + RAG** | Complex tasks with knowledge requirements | Medium | Medium | Medium |
+| **Fine-tuned + RAG** | Production systems with strict quality needs | High | Low | High |
 
 **Rule of thumb:** Start with prompting. Add RAG when you need
 external knowledge. Fine-tune only when you have 1000+ examples and the

@@ -48,23 +48,12 @@ The three most common lock-in patterns in enterprise AI:
 Your cloud provider offers an AI service. It’s the path of least
 resistance. It’s also a trap.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Cloud Provider], [AI Service], [Lock-in Mechanism],
-  [**Microsoft Azure**],
-  [Azure OpenAI],
-  [Enterprise agreements, Active Directory integration, compliance
-  certifications],
-  [**AWS**],
-  [Bedrock],
-  [VPC integration, IAM policies, data residency],
-  [**Google Cloud**],
-  [Vertex AI],
-  [BigQuery integration, TPU access, Gemini exclusivity],
-)
-]
+| Cloud Provider | AI Service | Lock-in Mechanism |
+| --- | --- | --- |
+| **Microsoft Azure** | Azure OpenAI | Enterprise agreements, Active Directory integration, compliance
+  certifications |
+| **AWS** | Bedrock | VPC integration, IAM policies, data residency |
+| **Google Cloud** | Vertex AI | BigQuery integration, TPU access, Gemini exclusivity |
 
 The problem isn’t using these services. The problem is building your
 entire agent architecture around a single provider’s API surface.
@@ -111,25 +100,12 @@ orchestration layer (how the agent loop is managed).
 
 Key abstraction tools:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Tool], [What It Does], [Best For],
-  [**LiteLLM**],
-  [Unified API for 100+ LLM providers],
-  [Drop-in replacement, same OpenAI format],
-  [**OpenRouter**],
-  [API gateway with model routing],
-  [Cost optimization, fallback chains],
-  [**Portkey**],
-  [AI gateway with caching, retries, logging],
-  [Enterprise observability],
-  [**vLLM**],
-  [Self-hosted inference server],
-  [Data sovereignty, cost control],
-)
-]
+| Tool | What It Does | Best For |
+| --- | --- | --- |
+| **LiteLLM** | Unified API for 100+ LLM providers | Drop-in replacement, same OpenAI format |
+| **OpenRouter** | API gateway with model routing | Cost optimization, fallback chains |
+| **Portkey** | AI gateway with caching, retries, logging | Enterprise observability |
+| **vLLM** | Self-hosted inference server | Data sovereignty, cost control |
 
 ## Token quota management
 When your organization has a fixed token budget - which is the norm in
@@ -147,28 +123,13 @@ little and casual users too much.
 
 **Organizational token allocation strategies:**
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Strategy], [How It Works], [Best For],
-  [**Equal split**],
-  [Each team gets monthly\_limit / num\_teams],
-  [Small orgs, equal workloads],
-  [**Priority-based**],
-  [Critical teams get larger allocations],
-  [Orgs with clear priorities],
-  [**Pay-per-use**],
-  [Teams charged against their budget],
-  [Large orgs, cost accountability],
-  [**Pooled with burst**],
-  [Shared pool, teams can burst up to 2x allocation],
-  [Flexible workloads],
-  [**Tiered models**],
-  [Expensive models for hard tasks, cheap models for easy],
-  [Cost-conscious orgs],
-)
-]
+| Strategy | How It Works | Best For |
+| --- | --- | --- |
+| **Equal split** | Each team gets monthly\_limit / num\_teams | Small orgs, equal workloads |
+| **Priority-based** | Critical teams get larger allocations | Orgs with clear priorities |
+| **Pay-per-use** | Teams charged against their budget | Large orgs, cost accountability |
+| **Pooled with burst** | Shared pool, teams can burst up to 2x allocation | Flexible workloads |
+| **Tiered models** | Expensive models for hard tasks, cheap models for easy | Cost-conscious orgs |
 
 ## The enterprise adoption playbook
 What actually works for getting agents into production at large

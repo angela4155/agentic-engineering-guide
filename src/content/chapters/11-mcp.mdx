@@ -42,22 +42,11 @@ server offers, then calls tools as needed during the agent session.
 MCP servers expose three types of capabilities, each serving a different
 purpose in the agent workflow.
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Capability], [Purpose], [Example],
-  [**Tools**],
-  [Actions the agent can take],
-  [`github.create_issue`, `db.query`, `fs.write`],
-  [**Resources**],
-  [Data the agent can read],
-  [Database schemas, file contents, API docs],
-  [**Prompts**],
-  [Reusable prompt templates],
-  [Code review template, bug report template],
-)
-]
+| Capability | Purpose | Example |
+| --- | --- | --- |
+| **Tools** | Actions the agent can take | `github.create_issue`, `db.query`, `fs.write` |
+| **Resources** | Data the agent can read | Database schemas, file contents, API docs |
+| **Prompts** | Reusable prompt templates | Code review template, bug report template |
 
 Tools are the most commonly used capability - they let agents take
 actions in external systems. Resources provide read-only access to data
@@ -124,28 +113,13 @@ shipped without authentication and were later exploited.
 
 MCP’s current specification has several specific security gaps:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Gap], [Risk], [Mitigation],
-  [No built-in authentication],
-  [Any client can connect],
-  [Add auth middleware],
-  [No authorization model],
-  [All tools accessible to all clients],
-  [Integrate OpenFGA],
-  [Tool descriptions are trusted],
-  [Malicious descriptions can mislead agents],
-  [Validate tool metadata],
-  [No rate limiting],
-  [Runaway agents can overwhelm servers],
-  [Add rate limiting middleware],
-  [No audit logging],
-  [No record of tool calls],
-  [Add logging middleware],
-)
-]
+| Gap | Risk | Mitigation |
+| --- | --- | --- |
+| No built-in authentication | Any client can connect | Add auth middleware |
+| No authorization model | All tools accessible to all clients | Integrate OpenFGA |
+| Tool descriptions are trusted | Malicious descriptions can mislead agents | Validate tool metadata |
+| No rate limiting | Runaway agents can overwhelm servers | Add rate limiting middleware |
+| No audit logging | No record of tool calls | Add logging middleware |
 
 ### Adding authorization to MCP
 ## MCPMark: Benchmarking real-world tool use
@@ -153,33 +127,13 @@ Not all models are equally good at using MCP tools. MCPMark (NUS TRAIL /
 LobeHub, ICLR 2026) benchmarks 127 real-world tasks across Notion,
 GitHub, Filesystem, Postgres, and Playwright:
 
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,right,auto,).at(col),
-  inset: 6pt,
-  [Model], [Pass@1], [Avg Tool Calls/Task], [Notes],
-  [GPT-5 (medium reasoning)],
-  [52.6%],
-  [~17],
-  [Best overall as of Feb 2026],
-  [Claude Sonnet 4],
-  [\<30%],
-  [~16],
-  [Strong on code tasks],
-  [o3],
-  [\<30%],
-  [~18],
-  [High reasoning, lower tool use],
-  [DeepSeek V3.2],
-  [29.7%],
-  [~15],
-  [Best open-source],
-  [Gemini 3 Pro],
-  [50.6%],
-  [~17],
-  [Close to GPT-5],
-)
-]
+| Model | Pass@1 | Avg Tool Calls/Task | Notes |
+| --- | --- | --- | --- |
+| GPT-5 (medium reasoning) | 52.6% | ~17 | Best overall as of Feb 2026 |
+| Claude Sonnet 4 | &lt;30% | ~16 | Strong on code tasks |
+| o3 | &lt;30% | ~18 | High reasoning, lower tool use |
+| DeepSeek V3.2 | 29.7% | ~15 | Best open-source |
+| Gemini 3 Pro | 50.6% | ~17 | Close to GPT-5 |
 
 These scores are much lower than simple function-calling benchmarks
 because MCPMark tests multi-step workflows with real services. The gap

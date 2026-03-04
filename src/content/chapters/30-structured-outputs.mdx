@@ -79,33 +79,13 @@ generating code or natural language where the model needs full
 expressiveness.
 
 ## When to use what
-#align(center)[#table(
-  columns: 4,
-  align: (col, row) => (auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Approach], [Best For], [Provider Support], [Reliability],
-  [**JSON mode**],
-  [Simple extraction, flexible schemas],
-  [All major providers],
-  [~95%],
-  [**Function calling**],
-  [Tool use, agent actions],
-  [OpenAI, Anthropic, Google],
-  [~98%],
-  [**Structured outputs**],
-  [Strict schema compliance],
-  [OpenAI (strict mode)],
-  [~99.9%],
-  [**Constrained decoding**],
-  [Open-source models, 100% guarantee],
-  [Outlines, vLLM, SGLang],
-  [100%],
-  [**Instructor library**],
-  [Pydantic models with any provider],
-  [Wraps any provider],
-  [~99%],
-)
-]
+| Approach | Best For | Provider Support | Reliability |
+| --- | --- | --- | --- |
+| **JSON mode** | Simple extraction, flexible schemas | All major providers | ~95% |
+| **Function calling** | Tool use, agent actions | OpenAI, Anthropic, Google | ~98% |
+| **Structured outputs** | Strict schema compliance | OpenAI (strict mode) | ~99.9% |
+| **Constrained decoding** | Open-source models, 100% guarantee | Outlines, vLLM, SGLang | 100% |
+| **Instructor library** | Pydantic models with any provider | Wraps any provider | ~99% |
 
 ## The Instructor Pattern
 Instructor is the most practical tool for production structured outputs.

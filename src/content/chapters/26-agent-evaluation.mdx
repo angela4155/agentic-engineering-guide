@@ -29,28 +29,13 @@ combination provides coverage that neither approach achieves alone.
 Agent testing requires a fundamentally different approach. You need to
 test at multiple levels:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Level], [What You Test], [How],
-  [**Unit**],
-  [Individual tool calls, prompt templates],
-  [Deterministic assertions],
-  [**Integration**],
-  [Tool chains, API interactions],
-  [Mock services + assertions],
-  [**Behavioral**],
-  [End-to-end task completion],
-  [LLM-as-judge + golden datasets],
-  [**Regression**],
-  [Prompt changes don’t break things],
-  [Before/after eval suites],
-  [**Performance**],
-  [Latency, cost, token usage],
-  [Benchmarks + budgets],
-)
-]
+| Level | What You Test | How |
+| --- | --- | --- |
+| **Unit** | Individual tool calls, prompt templates | Deterministic assertions |
+| **Integration** | Tool chains, API interactions | Mock services + assertions |
+| **Behavioral** | End-to-end task completion | LLM-as-judge + golden datasets |
+| **Regression** | Prompt changes don’t break things | Before/after eval suites |
+| **Performance** | Latency, cost, token usage | Benchmarks + budgets |
 
 ## The eval framework landscape
 The tooling has matured significantly. Here’s what’s available:
@@ -125,34 +110,15 @@ Build a curated set of tasks with known-good outputs.
 ## Agent benchmarks
 Know what your agent is being measured against:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Benchmark], [What It Tests], [Scores (Feb 2026)],
-  [**SWE-bench Verified**],
-  [Real GitHub issue resolution],
-  [Opus 4.6: 80.8%, GPT-5.2: 80.0%],
-  [**Terminal-Bench 2.0**],
-  [Real terminal-based coding tasks],
-  [GPT-5.3-Codex: 75.1%, Opus 4.6: 65.4%],
-  [**SWE-bench Pro**],
-  [Harder issue set, multi-file],
-  [GPT-5.3-Codex: 55.6%],
-  [**HumanEval**],
-  [Code generation correctness],
-  [Most models: 90-98%],
-  [**GAIA**],
-  [General AI assistant tasks],
-  [Top agents: 55-70%],
-  [**WebArena**],
-  [Web browsing and interaction],
-  [Top agents: 40-55%],
-  [**AgentBench**],
-  [Multi-domain agent tasks],
-  [Varies by domain],
-)
-]
+| Benchmark | What It Tests | Scores (Feb 2026) |
+| --- | --- | --- |
+| **SWE-bench Verified** | Real GitHub issue resolution | Opus 4.6: 80.8%, GPT-5.2: 80.0% |
+| **Terminal-Bench 2.0** | Real terminal-based coding tasks | GPT-5.3-Codex: 75.1%, Opus 4.6: 65.4% |
+| **SWE-bench Pro** | Harder issue set, multi-file | GPT-5.3-Codex: 55.6% |
+| **HumanEval** | Code generation correctness | Most models: 90-98% |
+| **GAIA** | General AI assistant tasks | Top agents: 55-70% |
+| **WebArena** | Web browsing and interaction | Top agents: 40-55% |
+| **AgentBench** | Multi-domain agent tasks | Varies by domain |
 
 > SWE-bench Verified is the industry standard for coding agents. As of
 > February 2026, frontier models score ~80%. If your agent scores below
@@ -230,37 +196,16 @@ A production eval pipeline runs on every prompt change.
 ## Metrics to track
 The metrics that actually matter in production:
 
-#align(center)[#table(
-  columns: 3,
-  align: (col, row) => (auto,auto,auto,).at(col),
-  inset: 6pt,
-  [Metric], [What It Measures], [Target],
-  [**Task completion rate**],
-  [% of tasks completed successfully],
-  [\> 85%],
-  [**Tool call accuracy**],
-  [% of tool calls that were necessary],
-  [\> 90%],
-  [**Hallucination rate**],
-  [% of outputs with fabricated info],
-  [\< 5%],
-  [**Mean tool calls per task**],
-  [Efficiency of agent reasoning],
-  [Varies by task],
-  [**P95 latency**],
-  [Time to complete a task],
-  [\< 60s for simple tasks],
-  [**Cost per task**],
-  [API spend per completed task],
-  [Track trend, not absolute],
-  [**Human override rate**],
-  [% of tasks requiring human intervention],
-  [\< 15%],
-  [**Regression rate**],
-  [% of previously passing evals that now fail],
-  [0% (hard gate)],
-)
-]
+| Metric | What It Measures | Target |
+| --- | --- | --- |
+| **Task completion rate** | % of tasks completed successfully | > 85% |
+| **Tool call accuracy** | % of tool calls that were necessary | > 90% |
+| **Hallucination rate** | % of outputs with fabricated info | &lt; 5% |
+| **Mean tool calls per task** | Efficiency of agent reasoning | Varies by task |
+| **P95 latency** | Time to complete a task | &lt; 60s for simple tasks |
+| **Cost per task** | API spend per completed task | Track trend, not absolute |
+| **Human override rate** | % of tasks requiring human intervention | &lt; 15% |
+| **Regression rate** | % of previously passing evals that now fail | 0% (hard gate) |
 
 **Related Concepts:** Agent Traces (Chapter 14), Cost Tracking
 (Chapter 15), Measuring Impact (Chapter 25)
