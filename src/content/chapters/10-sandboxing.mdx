@@ -39,7 +39,7 @@ the task completes. No persistent state means no accumulated security
 risks or data leakage between sessions. Each agent starts clean and ends
 clean.
 
-Ona takes this approach in production: every agent gets an isolated
+[Ona](https://ona.com) takes this approach in production: every agent gets an isolated
 cloud environment with its own filesystem, network, and process space.
 The environment is pre-configured with the project’s dependencies and
 tools, then destroyed when the task is done. This eliminates an entire
